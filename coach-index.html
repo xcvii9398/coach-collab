@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>母親節活動教練合作邀請｜反作用力訓練空間</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #08060f;
+    --pink: #ff2d78;
+    --pink-glow: rgba(255,45,120,0.18);
+    --blue: #00d4ff;
+    --blue-glow: rgba(0,212,255,0.15);
+    --purple: #7b2fff;
+    --white: #f0eaff;
+    --muted: #7a6e99;
+    --border: rgba(120,100,180,0.22);
+    --gold: #f0c040;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg);
+    color: var(--white);
+    font-family: 'Noto Sans TC', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px);
+    pointer-events: none;
+    z-index: 9999;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 60px 24px 48px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(240,192,64,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 15% 80%, rgba(255,45,120,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 85% 80%, rgba(0,212,255,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 5px 18px;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px rgba(240,192,64,0.2);
+  }
+  .hero-badge::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    padding: 5px 18px;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--pink);
+    clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
+    animation: glitch 5s infinite;
+  }
+  @keyframes glitch {
+    0%,92%,100% { opacity:0; transform:translateX(0); }
+    93% { opacity:1; transform:translateX(-3px); }
+    95% { opacity:0; }
+    97% { opacity:1; transform:translateX(3px); }
+    99% { opacity:0; }
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 8vw, 64px);
+    letter-spacing: 5px;
+    line-height: 1.1;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .h-gold { color: var(--gold); text-shadow: 0 0 20px var(--gold), 0 0 40px rgba(240,192,64,0.4); animation: fGold 7s infinite; }
+  .h-pink { color: var(--pink); text-shadow: 0 0 20px var(--pink), 0 0 40px rgba(255,45,120,0.4); animation: fPink 6s 1s infinite; }
+  .h-white { color: var(--white); animation: fWhite 8s 0.5s infinite; }
+  @keyframes fGold {
+    0%,50%,100%{opacity:1;} 51%{opacity:0.2;} 52%{opacity:1;} 80%,82%{opacity:0.6;} 81%{opacity:1;}
+  }
+  @keyframes fPink {
+    0%,55%,100%{opacity:1;} 56%{opacity:0.15;} 57%{opacity:1;} 58%{opacity:0.4;} 59%{opacity:1;}
+  }
+  @keyframes fWhite {
+    0%,65%,100%{opacity:1;} 66%{opacity:0.3;} 66.5%{opacity:1;} 67%{opacity:0.2;} 68%{opacity:1;}
+  }
+  .hero-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 4px;
+    margin-top: 12px;
+    position: relative;
+  }
+  .hero-desc {
+    max-width: 500px;
+    margin: 24px auto 0;
+    font-size: 14px;
+    color: rgba(240,234,255,0.75);
+    line-height: 1.9;
+    position: relative;
+  }
+  .hero-desc .hl { color: var(--gold); font-weight: 500; }
+  .perks {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .perk {
+    border-radius: 2px;
+    padding: 7px 16px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .perk.gold { color: var(--gold); border: 1px solid var(--gold); background: rgba(240,192,64,0.08); box-shadow: 0 0 10px rgba(240,192,64,0.15); }
+  .perk.pink { color: var(--pink); border: 1px solid var(--pink); background: var(--pink-glow); box-shadow: 0 0 10px rgba(255,45,120,0.15); }
+  .perk.blue { color: var(--blue); border: 1px solid var(--blue); background: var(--blue-glow); box-shadow: 0 0 10px rgba(0,212,255,0.15); }
+
+  .cyber-line {
+    position: relative; z-index: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--pink), transparent);
+    opacity: 0.4;
+  }
+
+  /* FORM */
+  .form-wrap {
+    position: relative; z-index: 1;
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .section-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title.gold-label { color: var(--gold); }
+  .section-title.gold-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(240,192,64,0.4), transparent); }
+  .section-title.pink-label { color: var(--pink); }
+  .section-title.pink-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(255,45,120,0.4), transparent); }
+
+  /* invitation card */
+  .invite-card {
+    background: rgba(240,192,64,0.05);
+    border: 1px solid rgba(240,192,64,0.25);
+    border-left: 2px solid var(--gold);
+    border-radius: 0 2px 2px 0;
+    padding: 18px 20px;
+    margin-bottom: 32px;
+    box-shadow: inset 0 0 20px rgba(240,192,64,0.03);
+  }
+  .invite-card p {
+    font-size: 13px;
+    color: rgba(240,234,255,0.65);
+    line-height: 1.9;
+  }
+  .invite-card .hl-gold { color: var(--gold); font-weight: 500; text-shadow: 0 0 8px rgba(240,192,64,0.4); }
+  .invite-card .hl-blue { color: var(--blue); font-weight: 500; }
+
+  .field-group { margin-bottom: 22px; }
+  label {
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  label .req { color: var(--pink); margin-left: 3px; }
+  input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(120,100,180,0.25);
+    border-radius: 2px;
+    padding: 12px 16px;
+    color: var(--white);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    -webkit-appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--gold);
+    background: rgba(240,192,64,0.04);
+    box-shadow: 0 0 0 3px rgba(240,192,64,0.08), 0 0 12px rgba(240,192,64,0.06);
+  }
+  input::placeholder, textarea::placeholder { color: rgba(122,110,153,0.5); font-family: 'Noto Sans TC', sans-serif; }
+  select option { background: #12091e; color: var(--white); }
+  textarea { resize: vertical; min-height: 88px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .cyber-box {
+    position: relative;
+    background: rgba(255,255,255,0.015);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 22px 20px;
+    margin-bottom: 28px;
+  }
+  .cyber-box::before { content: ''; position: absolute; top: -1px; left: -1px; width: 12px; height: 12px; border-style: solid; border-width: 2px 0 0 2px; border-color: var(--gold); }
+  .cyber-box::after  { content: ''; position: absolute; bottom: -1px; right: -1px; width: 12px; height: 12px; border-style: solid; border-width: 0 2px 2px 0; border-color: var(--pink); }
+
+  /* checkbox group */
+  .check-group { display: flex; flex-direction: column; gap: 10px; }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 10px 14px;
+    border: 1px solid rgba(120,100,180,0.2);
+    border-radius: 2px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .check-item:hover { border-color: var(--gold); background: rgba(240,192,64,0.04); }
+  .check-item input[type="checkbox"] { display: none; }
+  .check-item .box {
+    width: 16px; height: 16px;
+    border: 1px solid var(--muted);
+    border-radius: 2px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+    font-size: 10px;
+  }
+  .check-item input:checked ~ .box {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #08060f;
+  }
+  .check-item input:checked ~ .box::after { content: '✓'; font-weight: 700; }
+  .check-label { font-size: 13px; color: rgba(240,234,255,0.75); line-height: 1.5; }
+  .check-label small { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; font-family: 'Share Tech Mono', monospace; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.25s, box-shadow 0.25s;
+    margin-top: 8px;
+    text-shadow: 0 0 8px rgba(240,192,64,0.5);
+    box-shadow: 0 0 12px rgba(240,192,64,0.15), inset 0 0 12px rgba(240,192,64,0.04);
+  }
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  .submit-btn:hover { color: #08060f; box-shadow: 0 0 24px rgba(240,192,64,0.5); text-shadow: none; }
+  .submit-btn:hover::before { transform: scaleX(1); }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { border-color: #333; color: #444; box-shadow: none; text-shadow: none; cursor: not-allowed; }
+
+  #msg-success, #msg-error { display: none; }
+  #msg-success {
+    background: rgba(240,192,64,0.06);
+    border: 1px solid rgba(240,192,64,0.4);
+    border-radius: 2px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(240,192,64,0.1);
+  }
+  #msg-success h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 4px; color: var(--gold); text-shadow: 0 0 16px rgba(240,192,64,0.6); margin-bottom: 10px; }
+  #msg-success p { font-size: 13px; color: rgba(240,234,255,0.7); line-height: 1.8; }
+  #msg-error { background: rgba(255,45,120,0.06); border: 1px solid rgba(255,45,120,0.35); border-radius: 2px; padding: 16px; text-align: center; color: var(--pink); margin-top: 16px; font-size: 13px; font-family: 'Share Tech Mono', monospace; }
+
+  .footer { position: relative; z-index: 1; text-align: center; padding: 28px 24px; font-family: 'Share Tech Mono', monospace; font-size: 11px; letter-spacing: 2px; color: rgba(122,110,153,0.4); border-top: 1px solid rgba(120,100,180,0.12); }
+
+  @media (max-width: 480px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge" data-text="COACH COLLABORATION INVITATION">COACH COLLABORATION INVITATION</div>
+  <h1>
+    <span class="h-gold">母親節活動</span><br>
+    <span class="h-white">教練</span><span class="h-pink">合作</span><br>
+    <span class="h-white">邀請</span>
+  </h1>
+  <p class="hero-sub">// REACTION FORCE TRAINING SPACE //</p>
+  <p class="hero-desc">
+    這次母親節活動，我們想邀請場館內的自由教練一起參與，<br>
+    讓有興趣的會員能免費體驗一堂課，<br>
+    <span class="hl">場租費用由場館吸收，會員不需支付體驗費。</span>
+  </p>
+  <div class="perks">
+    <div class="perk gold">🎓 場租費用全免</div>
+    <div class="perk pink">💪 會員免費體驗</div>
+    <div class="perk blue">🤝 場館聯名推廣</div>
+  </div>
+</div>
+
+<div class="cyber-line"></div>
+
+<div class="form-wrap">
+
+  <div class="invite-card">
+    <p>
+      <span class="hl-gold">活動說明 ／</span>
+      本次母親節活動提供會員 10 天免費運動體驗，若會員有意願上課，
+      我們希望邀請有興趣的自由教練提供<span class="hl-gold">一堂免費體驗課</span>給這些會員。<br><br>
+      合作條件：<span class="hl-blue">場館不收場租</span>，<span class="hl-blue">會員不付費</span>，
+      教練只需提供一堂體驗課。若體驗後會員有意繼續上課，後續課程費用正常收取。<br><br>
+      填寫此表單即代表你有意願了解這次合作，我們會再與你確認細節。
+    </p>
+  </div>
+
+  <form id="main-form">
+
+    <p class="section-title gold-label">基本資料</p>
+    <div class="cyber-box">
+      <div class="field-group two-col">
+        <div>
+          <label>姓名<span class="req">*</span></label>
+          <input type="text" name="name" placeholder="你的名字" required>
+        </div>
+        <div>
+          <label>電話<span class="req">*</span></label>
+          <input type="tel" name="phone" placeholder="0912-345-678" required>
+        </div>
+      </div>
+      <div class="field-group" style="margin-bottom:0">
+        <label>LINE ID<span class="req">*</span></label>
+        <input type="text" name="line_id" placeholder="你的 LINE ID" required>
+      </div>
+    </div>
+
+    <p class="section-title pink-label">合作意願</p>
+    <div class="cyber-box">
+      <div class="field-group">
+        <label>你的教練專項<span class="req">*</span></label>
+        <select name="specialty" required>
+          <option value="">請選擇</option>
+          <option>增肌／重量訓練</option>
+          <option>減脂／體態雕塑</option>
+          <option>功能性訓練</option>
+          <option>女性專項訓練</option>
+          <option>運動傷害復健</option>
+          <option>新手入門訓練</option>
+          <option>其他</option>
+        </select>
+      </div>
+      <div class="field-group" style="margin-bottom:0">
+        <label>備註或想說的話</label>
+        <textarea name="note" placeholder="例如：想了解更多細節、有特定想服務的族群…"></textarea>
+      </div>
+    </div>
+
+    <button type="submit" id="submit-btn" class="submit-btn">送出意願</button>
+    <div id="msg-error">ERROR — 送出失敗，請稍後再試或直接私訊我們。</div>
+
+  </form>
+</div>
+
+<div class="footer">
+  反作用力訓練空間 &nbsp;／&nbsp; 高雄市鼓山區美術東五路61號2樓 &nbsp;／&nbsp; @reaction.force
+</div>
+
+<!-- 感謝頁面 -->
+<div id="thank-you" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:99999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(240,192,64,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,192,64,0.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%, rgba(240,192,64,0.12) 0%, transparent 70%);pointer-events:none;"></div>
+  <div style="position:relative;z-index:1;max-width:480px;">
+    <div style="font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:5px;color:var(--gold);border:1px solid var(--gold);padding:5px 18px;display:inline-block;margin-bottom:28px;box-shadow:0 0 10px rgba(240,192,64,0.2);">COLLABORATION RECEIVED</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,10vw,72px);letter-spacing:6px;line-height:1.1;margin-bottom:8px;">
+      <span style="color:var(--gold);text-shadow:0 0 24px var(--gold);">感謝</span><br>
+      <span style="color:var(--white);">你的</span><span style="color:var(--pink);text-shadow:0 0 24px var(--pink);">回覆</span>
+    </h2>
+    <p style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:3px;margin-bottom:28px;">// REACTION FORCE TRAINING SPACE //</p>
+    <div style="background:rgba(240,192,64,0.05);border:1px solid rgba(240,192,64,0.2);border-left:2px solid var(--gold);border-radius:0 2px 2px 0;padding:18px 20px;margin-bottom:32px;text-align:left;">
+      <p style="font-size:14px;color:rgba(240,234,255,0.75);line-height:1.9;">
+        已收到你的合作意願 🙌<br>
+        我們會盡快透過 <span style="color:var(--gold);font-weight:500;">LINE</span> 與你聯繫，<br>
+        確認這次<span style="color:var(--pink);font-weight:500;">母親節活動</span>的合作細節。
+      </p>
+    </div>
+    <p style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(122,110,153,0.5);letter-spacing:1px;">反作用力訓練空間 ／ @reaction.force</p>
+  </div>
+</div>
+
+<script>
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbwwKD_ViwAMj15L0mdSBTZZX8JDzpnv_4pOLb_L52wGklO4Xarwvy0fqGdOhxmvap-T/exec';
+
+document.getElementById('main-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'SENDING…';
+
+  const fd = new FormData(this);
+  const data = { form_type: '母親節教練合作' };
+  const timeSlots = [];
+  this.querySelectorAll('input[name="time_slot"]:checked').forEach(cb => timeSlots.push(cb.value));
+  fd.forEach((v, k) => { if (k !== 'time_slot') data[k] = v; });
+  data.time_slots = timeSlots.join('、') || '未填';
+  data.submitted_at = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+
+  try {
+    await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(data) });
+    const ty = document.getElementById('thank-you');
+    ty.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    document.getElementById('msg-error').style.display = 'none';
+    this.reset();
+    btn.style.display = 'none';
+  } catch (err) {
+    document.getElementById('msg-error').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '送出意願';
+  }
+});
+
+// checkbox visual toggle
+document.querySelectorAll('.check-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const cb = this.querySelector('input[type="checkbox"]');
+    cb.checked = !cb.checked;
+    const box = this.querySelector('.box');
+    if (cb.checked) {
+      box.style.borderColor = 'var(--gold)';
+      box.style.background = 'var(--gold)';
+      box.style.color = '#08060f';
+      box.textContent = '✓';
+      this.style.borderColor = 'var(--gold)';
+      this.style.background = 'rgba(240,192,64,0.06)';
+    } else {
+      box.style.borderColor = '';
+      box.style.background = '';
+      box.style.color = '';
+      box.textContent = '';
+      this.style.borderColor = '';
+      this.style.background = '';
+    }
+  });
+});
+</script>
+</body>
+</html>
